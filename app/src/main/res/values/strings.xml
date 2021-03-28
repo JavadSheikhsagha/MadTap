@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MadTap</string>
+    <string name="smart_look_key">8fdd3d9a6270ed4a0ab36bde331a745fd91d9ca9</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+</resources>

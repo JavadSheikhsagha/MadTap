@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<activity_main_xml_motion_startplay_p2 xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ConstraintSet android:id="@+id/start_p2" />
+</activity_main_xml_motion_startplay_p2>
