@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import ir.nikgostarr.madtap.databinding.UpdateDialogBinding
+import java.lang.Exception
 
 class UpdateDialog : DialogFragment() {
 
@@ -30,9 +31,13 @@ class UpdateDialog : DialogFragment() {
     private fun setupViews(view: View?) {
 
         binding.cardUpdateDialogUpdate.setOnClickListener {
-            val url = "bazaar://details?id=$PACKAGE_NAME"
-            val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)).setPackage("com.farsitel.bazaar")
-            startActivity(intent)
+            try {
+                val url = "bazaar://details?id=$PACKAGE_NAME"
+                val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)).setPackage("com.farsitel.bazaar")
+                startActivity(intent)
+            }catch (e:Exception){
+
+            }
         }
     }
 
