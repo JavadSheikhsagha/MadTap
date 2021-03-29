@@ -3,6 +3,7 @@ package ir.nikgostarr.madtap.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract.Directory.PACKAGE_NAME
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +30,7 @@ class UpdateDialog : DialogFragment() {
     private fun setupViews(view: View?) {
 
         binding.cardUpdateDialogUpdate.setOnClickListener {
-            val url = "bazaar://details?id=" + "ir.nikgostar.madtap"
+            val url = "bazaar://details?id=$PACKAGE_NAME"
             val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)).setPackage("com.farsitel.bazaar")
             startActivity(intent)
         }

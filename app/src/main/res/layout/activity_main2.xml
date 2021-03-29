@@ -8,25 +8,23 @@
     tools:context=".ui.MainActivity">
 
     <LinearLayout
-        android:foreground="@color/gray500"
-        android:orientation="vertical"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:foreground="@color/gray500"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:background="#ff33b5e5"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".1"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:background="#ff33b5e5" />
 
-    <LinearLayout
-        android:background="#ffff4444"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".1"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:background="#ffff4444" />
 
     </LinearLayout>
 
@@ -79,5 +77,40 @@
             />
 
     </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="اشتراک گذاری"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_baseline_share_24"
+                app:tint="@android:color/holo_green_dark" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

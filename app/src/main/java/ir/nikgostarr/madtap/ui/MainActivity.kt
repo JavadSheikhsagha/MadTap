@@ -1,7 +1,10 @@
 package ir.nikgostarr.madtap.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.provider.ContactsContract.Directory.PACKAGE_NAME
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import ir.nikgostarr.madtap.api.ApiClass
@@ -45,16 +48,22 @@ class MainActivity : AppCompatActivity() {
             .baseUrl("http://hnikanm74.gigfa.com/click_fast/")
             .build()
 
-        retrofit.create(ApiClass::class.java).ver.enqueue(object : Callback<String> {
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                val verCode = BuildConfig.VERSION_CODE.toString()
+        binding.cardShare.setOnClickListener {
+            val url = "bazaar://details?id=$PACKAGE_NAME"
+            val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)).setPackage("com.farsitel.bazaar")
+            startActivity(intent)
+        }
+
+        retrofit.create(ApiClass::class.java).ver.enqueue(object : Callback<Int> {
+            override fun onResponse(call: Call<Int>, response: Response<Int>) {
+                val verCode = BuildConfig.VERSION_CODE
                 if (verCode != response.body()) {
                     val dialog = UpdateDialog()
                     dialog.show(supportFragmentManager, null)
                 }
             }
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+            override fun onFailure(call: Call<Int>, t: Throwable) {
                 Log.e("LOG1", "onFailure: "+t.toString())
             }
         })

@@ -3,7 +3,7 @@
     package="ir.nikgostarr.madtap">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name="ir.nikgostarr.madtap.pack.MyAppClass"
