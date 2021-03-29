@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         retrofit.create(ApiClass::class.java).ver.enqueue(object : Callback<Int> {
             override fun onResponse(call: Call<Int>, response: Response<Int>) {
                 val verCode = BuildConfig.VERSION_CODE
-                if (verCode != response.body()) {
+                if (verCode < response.body()!!.toInt()) {
                     val dialog = UpdateDialog()
                     dialog.show(supportFragmentManager, null)
                 }
