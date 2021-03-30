@@ -101,7 +101,7 @@ public class PaintView extends View {
                         });
                         AnimatorSet rectAnimation = new AnimatorSet();
                         rectAnimation.playTogether(animateLeft, animateRight, animateTop, animateBottom);
-                        rectAnimation.setDuration(150).start();
+                        rectAnimation.setDuration(100).start();
 
                         ObjectAnimator animateLeft2 = ObjectAnimator.ofFloat(rect2, "left", 0, 0);
                         ObjectAnimator animateRight2 = ObjectAnimator.ofFloat(rect2, "right", rect2.width(), rect2.width());
@@ -115,7 +115,7 @@ public class PaintView extends View {
                         });
                         AnimatorSet rectAnimation2 = new AnimatorSet();
                         rectAnimation2.playTogether(animateLeft2, animateRight2, animateTop2, animateBottom2);
-                        rectAnimation2.setDuration(150).start();
+                        rectAnimation2.setDuration(100).start();
 
 //                        rect1 = new RectF(0,0,rect1.width(), rect1.height() + SIZE);
 //                        rect2 = new RectF(0,rect1.height(),rect2.width(), rect2.bottom);
@@ -135,7 +135,7 @@ public class PaintView extends View {
                         });
                         AnimatorSet rectAnimation = new AnimatorSet();
                         rectAnimation.playTogether(animateLeft, animateRight, animateTop, animateBottom);
-                        rectAnimation.setDuration(150).start();
+                        rectAnimation.setDuration(100).start();
 
                         ObjectAnimator animateLeft2 = ObjectAnimator.ofFloat(rect2, "left", 0, 0);
                         ObjectAnimator animateRight2 = ObjectAnimator.ofFloat(rect2, "right", rect2.width(), rect2.width());
@@ -149,7 +149,7 @@ public class PaintView extends View {
                         });
                         AnimatorSet rectAnimation2 = new AnimatorSet();
                         rectAnimation2.playTogether(animateLeft2, animateRight2, animateTop2, animateBottom2);
-                        rectAnimation2.setDuration(150).start();
+                        rectAnimation2.setDuration(100).start();
 //                        rect1 = new RectF(0,0,rect1.width(), rect1.height() - SIZE);
 //                        rect2 = new RectF(0,rect1.height(),rect2.width(), rect2.bottom);
                     }

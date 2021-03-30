@@ -43,15 +43,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75">
+        app:layout_constraintVertical_bias="0.65">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="50dp"
-            android:paddingTop="8dp"
             android:paddingEnd="50dp"
-            android:paddingBottom="8dp"
+            android:paddingBottom="4dp"
             android:text="شروع"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -62,7 +61,7 @@
         android:id="@+id/cardShare"
         android:background="@drawable/shape_main_share"
         android:padding="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,8 +69,8 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_baseline_share_24"
             app:tint="#5E6DF1" />
