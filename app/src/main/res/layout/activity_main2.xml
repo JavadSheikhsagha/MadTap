@@ -2,31 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/const_mainMenu_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/const_mainMenu_parent"
     tools:context=".ui.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:foreground="@color/gray500"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".1"
-            android:background="#ff33b5e5" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".1"
-            android:background="#ffff4444" />
-
-    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +21,6 @@
 
 
     <ImageView
-        app:layout_constraintVertical_bias="0.70"
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="170dp"
@@ -49,69 +28,55 @@
         app:layout_constraintBottom_toTopOf="@+id/card_startGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.70" />
 
 
     <RelativeLayout
-        android:padding="8dp"
-        android:elevation="2dp"
         android:id="@+id/card_startGame"
-        android:background="@drawable/shape_mainmenu_startgame"
-        app:layout_constraintVertical_bias="0.75"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_mainmenu_startgame"
+        android:elevation="2dp"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp"
+            android:paddingStart="50dp"
             android:paddingTop="8dp"
+            android:paddingEnd="50dp"
             android:paddingBottom="8dp"
-            android:text="شروع بازی!"
-            android:textSize="23sp"
-            android:textColor="#221095"
-            />
+            android:text="شروع"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/cardShare"
+        android:background="@drawable/shape_main_share"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="اشتراک گذاری"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/ic_baseline_share_24"
-                app:tint="@android:color/holo_green_dark" />
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_share_24"
+            app:tint="#5E6DF1" />
 
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

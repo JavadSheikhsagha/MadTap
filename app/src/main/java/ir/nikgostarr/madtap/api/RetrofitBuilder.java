@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
 
-    private static final String BASE_URL = "http://hnikanm74.gigfa.com/click_fast/";
+    private static final String BASE_URL = "http://www.javadcooker.ir/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient(){

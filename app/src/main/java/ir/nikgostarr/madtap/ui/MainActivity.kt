@@ -37,27 +37,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        val client = OkHttpClient.Builder()
-//            .addInterceptor(
-//                BasicAuthInterceptor(
-//                    "gigfa_28246037",
-//                    "123@Pass"
-//                )
-//            )
-//            .build()
-//
-//
-//        val retrofit = Retrofit.Builder()
-//            .client(client)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .baseUrl("http://hnikanm74.gigfa.com/")
-//            .build()
-        //val queue = Volley.newRequestQueue(this)
-        //val url = URL("http://hnikanm74.gigfa.com/click_fast/version.php")
 
+        Log.e("LOG1", "onCreate: bazaar not ${applicationContext.packageName}")
         binding.cardShare.setOnClickListener {
             try {
-                val url = "bazaar://details?id=$PACKAGE_NAME"
+                val url = "bazaar://details?id=${applicationContext.packageName}"
                 val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse(url))
                     .setPackage("com.farsitel.bazaar")
                 startActivity(intent)
@@ -66,66 +50,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        val url = "http://hnikanm74.gigfa.com/click_fast/version.php"
-//        val queue = Volley.newRequestQueue(this)
-//        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null, { response ->
-//            Log.i("TAG3", "onCreate: ${response.toString()}")
-//        },
-//            { error ->
-//                Log.i("TAG3", "onCreate: ${error.toString()}")
-//            }
-//        )
-//        queue.add(jsonObjectRequest)
-        //MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
 
-// Access the RequestQueue through your singleton class.
-        //MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
-
-//        val model =URL("http://hnikanm74.gigfa.com/click_fast/").readText()
-//        Log.i("LOG3", "onCreate: "+model)
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val model =URL("http://hnikanm74.gigfa.com/click_fast/").readText()
-//            Log.i("LOG3", "onCreate: "+model)
-//        }
-//        val queue = Volley.newRequestQueue(this)
-//        val url = "http://hnikanm74.gigfa.com/click_fast/version.php"
-//
-//// Request a string response from the provided URL.
-//        val stringRequest = StringRequest(Request.Method.GET, url,
-//            { response ->
-//                // Display the first 500 characters of the response string.
-//                Log.i("LOG3", "Response is: ${response}")
-//            },
-//            {
-//                Log.i("LOG3", "Response is: ${it.toString()}")
-//            })
-//        queue.add(stringRequest)
-//        queue.start()
-
-//        val url = "http://hnikanm74.gigfa.com/click_fast/version.php"
-//        val stringRequest = StringRequest(url,
-//            { response ->
-//                Log.i("LOG5", "onCreate: $response")
-//            }) {
-//            Log.i("LOG5", "onCreate: $it")
-//            // Anything you want
-//        }
-//        val requestQueue = Volley.newRequestQueue(applicationContext)
-//        requestQueue.add(stringRequest)
-//        requestQueue.start()
-
-//        //val url = URL("http://www.android.com/")
-//        val urlConnection: HttpURLConnection = url.openConnection() as HttpURLConnection
-//        try {
-//            val `in`: InputStream = BufferedInputStream(urlConnection.getInputStream())
-//            Log.i(
-//                "LOG1", "onCreate: ${`in`.read().toString()}"
-//            )
-//        } finally {
-//            urlConnection.disconnect()
-//        }
-
-        RetrofitBuilder.getClient().create(ApiClass::class.java).version().enqueue(object :
+        RetrofitBuilder.getClient().create(ApiClass::class.java).version("madtap").enqueue(object :
             Callback<List<VersionModel>> {
 
             override fun onFailure(call: Call<List<VersionModel>>, t: Throwable) {
@@ -136,28 +62,17 @@ class MainActivity : AppCompatActivity() {
                 call: Call<List<VersionModel>>,
                 response: Response<List<VersionModel>>
             ) {
-                val verCode = BuildConfig.VERSION_CODE
-                if (verCode < response.body()!![0].version.toInt()) {
-                    val dialog = UpdateDialog()
-                    dialog.show(supportFragmentManager, null)
+                if (response.body() != null) {
+                    val pInfo = applicationContext.packageManager.getPackageInfo(applicationContext.packageName, 0)
+                    Log.i("LOG3", "onResponse:${response.body()!![0].version.toString()},,,${pInfo.versionCode} ")
+                    if (pInfo.versionCode < response.body()!![0].version.toInt()) {
+                        val dialog = UpdateDialog()
+                        dialog.show(supportFragmentManager, null)
+                    }
                 }
             }
         })
-        //apiHit()
-
     }
-//
-//    private fun apiHit() {
-//        val url = "http://hnikanm74.gigfa.com/click_fast/version.php"
-//        val queue : RequestQueue = Volley.newRequestQueue(this)
-//        val request =  JsonObjectRequest(Request.Method.GET, url, null, { response: JSONObject? ->
-//
-//            Log.i("LOG", "apiHit: ${response.toString()}" )
-//        }, { error: VolleyError? ->
-//            Log.i("LOG", "apiHit: ${error.toString()}" )
-//        })
-//        queue.add(request)
-//    }
 
 
 }

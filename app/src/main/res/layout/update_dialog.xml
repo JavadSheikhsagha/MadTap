@@ -14,34 +14,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="#A398E3"
             android:layout_gravity="center"
             android:layout_width="350dp"
             android:layout_height="150dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight=".5"
-                    android:background="#8033B5E5" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight=".5"
-                    android:background="#80FF4444" />
-
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="نسخه جدیدمون رو دانلود کن!"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toTopOf="@+id/card_updateDialog_update"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +36,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="#49B926"
                 app:cardCornerRadius="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +64,7 @@
                         android:layout_gravity="center"
                         android:padding="12dp"
                         android:text="دانلود از کافه بازار"
-                        android:textColor="@color/white"
+                        android:textColor="#23BD1E"
                         android:textSize="18sp" />
 
                 </LinearLayout>
