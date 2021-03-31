@@ -266,6 +266,8 @@ class GameActivity : AppCompatActivity() {
                 .duration(300)
                 .playOn(binding.motionLayoutP2)
 
+            binding.motionStartPlayP1.rotation = 180F
+
             binding.paintView.refresh()
             binding.paintView.isEnabled = false
         }
